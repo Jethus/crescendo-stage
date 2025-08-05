@@ -1,20 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 import ServiceItem from "./ServiceItem.astro";
 
-const serviceEntries = (await getCollection("services"))
-  .sort(
-    (a, b) =>
-      (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
-      a.data.heading.localeCompare(b.data.heading)
-  );
-
-const servicesWithContent = await Promise.all(
-  serviceEntries.map(async (service) => {
-    const { Content } = await render(service);
-    return { data: service.data, Content };
-  })
+const services = (await getCollection("services")).sort(
+  (a, b) =>
+    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+    a.data.heading.localeCompare(b.data.heading)
 );
 ---
 
@@ -29,11 +20,9 @@ const servicesWithContent = await Promise.all(
 
     <ul class="services-list" role="list">
       {
-        servicesWithContent.map((service, i) => (
+        services.map((service) => (
           <li role="listitem">
-            <ServiceItem {...service.data} flip={i % 2 === 1}>
-              <service.Content />
-            </ServiceItem>
+            <ServiceItem {...service.data} />
           </li>
         ))
       }
@@ -60,14 +49,8 @@ const servicesWithContent = await Promise.all(
 
       .services-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
         list-style-type: none;
         padding: 0;
-
-        li {
-          margin-bottom: 2rem;
-        }
       }
     }
   }

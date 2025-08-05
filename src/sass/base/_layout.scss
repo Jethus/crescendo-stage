@@ -16,13 +16,6 @@ html {
   overflow-x: clip;
 }
 
-body:has(#menu-toggle:checked) {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-}
-
 /* Remove tap highlight color on mobile */
 a,
 button,
@@ -32,6 +25,9 @@ textarea {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   max-width: $content-width;
   position: relative;
   z-index: 1;
@@ -40,8 +36,8 @@ textarea {
 }
 
 section {
-  padding: 1.5rem 0.75rem;
-  @include container-query(medium) {
-    padding: 2rem 1rem;
+  padding: 4rem 0;
+  @include container-query(tablets) {
+    padding: 2rem 0;
   }
 }

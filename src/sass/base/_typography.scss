@@ -92,13 +92,3 @@ a:not([class*="btn"]) {
     color: $brand-action;
   }
 }
-
-.topper {
-  font-size: var(--font-size-sm);
-  font-weight: $bold;
-  line-height: $line-height-small;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
-  color: $brand-action;
-  display: block;
-}

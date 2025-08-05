@@ -36,14 +36,11 @@
     container-type: inline-size;
     background: $gradient-bg;
     .container {
-      display: flex;
+      max-width: 1600px;
       flex-direction: column;
-      gap: 3rem;
-      justify-content: space-between;
-      padding: 4rem 1rem;
     }
     .flex-group-col {
-      padding: 2rem 3rem;
+      padding: 0 2rem 3rem;
       h1 {
         font-size: var(--font-size-xxl);
         line-height: 1.4;
@@ -65,10 +62,10 @@
     .hero-image {
       position: absolute;
       width: clamp(800px, 70vw, 1200px);
-      height: clamp(860px, 60vh, 1000px);
+      height: clamp(900px, 60vh, 1200px);
       pointer-events: none;
       user-select: none;
-      translate: 75% -23%;
+      transform: translate(65%, -20%);
     }
     @include container-query(tablets) {
       .container {
@@ -78,8 +75,8 @@
       padding: 6rem 4rem;
 
       .flex-group-col {
-        flex: 0 0 53%;
-        min-width: 770px;
+        flex: 0 0 50%;
+        min-width: 760px;
       }
       .hero-image {
       }

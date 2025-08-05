@@ -10,7 +10,7 @@ import HeaderLink from "./HeaderLink.astro";
         src="/src/assets/svgs/CS-logo.svg"
         alt="Crescendo Stage"
         width="auto"
-        height="50px"
+        height="auto"
       />
     </a>
     <div class="desktop-links">
@@ -60,7 +60,7 @@ import HeaderLink from "./HeaderLink.astro";
     gap: 15%;
     padding: 1rem 1.5rem;
     background: $light;
-    box-shadow: 0 2px 4px rgba($dark, 0.25);
+    box-shadow: 0 2px 4px rgba($dark, 0.12);
     transform: scaleX(1) translateY(0);
     transform-origin: top center;
     margin-inline: auto;
@@ -71,6 +71,12 @@ import HeaderLink from "./HeaderLink.astro";
       padding 0.35s ease,
       box-shadow 0.35s ease,
       border-radius 0.35s ease;
+    .logo {
+      height: 60px;
+      img {
+        height: 60px;
+      }
+    }
     &.is-shrunk {
       transform: scale(0.94) translateY(2rem);
       width: calc(100% - 2rem);
