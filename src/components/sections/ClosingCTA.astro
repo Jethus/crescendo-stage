@@ -1,0 +1,55 @@
+---
+
+---
+
+<!-- update with title and content/slot props, used differently on kompareIQ, rename to CTA -->
+<section id="ClosingCTA">
+  <div class="container">
+    <div class="flex-group-col">
+      <h2 class="title">Ready to elevate your business?</h2>
+      <p>Book a free discovery session with no strings attached.</p>
+      <a class="btn-secondary" href="/contact">Book a Demo</a>
+    </div>
+    <img
+      loading="lazy"
+      src="/src/assets/svgs/closing-cta.svg"
+      alt=""
+      width="100%"
+      height="auto"
+    />
+  </div>
+</section>
+
+<style lang="scss">
+  @use "@styles" as *;
+
+  #ClosingCTA {
+    background: linear-gradient(
+      to right,
+      $brand-action 0%,
+      $brand-action 62.5%,
+      $light 62.5%,
+      $light 100%
+    );
+    padding: 0;
+    .container {
+      flex-direction: row;
+      max-width: 100%;
+      .flex-group-col {
+        padding: 4rem 2rem 4rem 240px;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 0 0 52.5%;
+        .title {
+          color: $light;
+        }
+        p {
+          color: rgba($light, 0.7);
+        }
+        .btn-secondary {
+          max-width: 60%;
+        }
+      }
+    }
+  }
+</style>

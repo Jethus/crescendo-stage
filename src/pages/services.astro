@@ -1,7 +1,34 @@
 ---
 import Layout from "../layouts/Basic.astro";
+import TwoColumn from "../components/layout/TwoColumn.astro";
+import Tabs from "../components/interactive/Tabs.astro";
+import ImageBlock from "../components/primitives/ImageBlock.astro";
+import softwareImage from "../assets/webp/software.webp";
 ---
 
 <Layout title="Our Services" description="Lorem ipsum dolor sit amet">
-  <p>This is a basic layout for the services page.</p>
+  <TwoColumn title="AI Solutions" heading="h1" id="ai-solutions">
+    <p slot="left">
+      Empower and streamline your operations by automating repetitive tasks such
+      as data entry, document review, exception handling and reporting. Our AI
+      solutions integrate seamlessly with your existing systems and processes,
+      freeing your team to focus on exception resolution and strategic
+      priorities.
+    </p>
+    <a href="/contact" class="btn-primary" slot="left">Book a Demo</a>
+    <ImageBlock
+      slot="right"
+      src={softwareImage}
+      alt="AI Solutions"
+      width="1359"
+      height="750"
+      loading="eager"
+      class="right-image"
+      layout="full-width"
+      priority
+    />
+  </TwoColumn>
+  <TwoColumn title="AI Configure" id="ai-configure">
+    <Tabs slot="left" />
+  </TwoColumn>
 </Layout>

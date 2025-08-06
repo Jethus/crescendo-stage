@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from "astro:content";
+import TabItem from "./TabItem.astro";
+
+const tabs = await getCollection("tabs");
+
+const rendered = await Promise.all(
+  tabs.map(async (tab) => {
+    const { Content } = await render(tab);
+    return { data: tab.data, Content };
+  })
+);
+---
+
+<div class="tabs">
+  <nav class="tab-options">
+    {
+      rendered.map(({ data }, i) => (
+        <button class={`tab-option${i === 0 ? " active" : ""}`} data-index={i}>
+          {data.title}
+        </button>
+      ))
+    }
+  </nav>
+
+  <div class="tab-panels">
+    {
+      rendered.map(({ Content }, i) => (
+        <TabItem data-index={i} class="tab-item">
+          <Content />
+        </TabItem>
+      ))
+    }
+  </div>
+</div>
+
+<style lang="scss">
+  @use "@styles" as *;
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .tab-item {
+      padding: 1rem;
+      border: 1px solid $brand-primary;
+      background-color: $light;
+      transition: background-color 0.3s ease;
+
+      &.active {
+      }
+    }
+  }
+</style>
+
+<script is:inline>
+  const tabs = document.querySelectorAll(".tab-option");
+  const panels = document.querySelectorAll(".tab-item");
+  panels[0].classList.add("active");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const i = tab.dataset.index;
+      tabs.forEach((t) => t.classList.toggle("active"));
+      panels.forEach((p) =>
+        p.classList.toggle("active", p.dataset.index === i)
+      );
+    });
+  });
+</script>

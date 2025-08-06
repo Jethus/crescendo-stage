@@ -6,8 +6,8 @@
       processes, freeing your team to focus on exception resolution and
       strategic priorities.
     </p>
-    <ul class="service-cards" role="list">
-      <li class="card" role="listitem">
+    <ul class="service-cards">
+      <li class="card">
         <h3>Proven Expertise</h3>
         <p>
           Deploy our cloud-based or on premise AI solutions in days, not months
@@ -22,7 +22,7 @@
           height="100%"
         />
       </li>
-      <li class="card" role="listitem">
+      <li class="card">
         <h3>Scalable & Flexible</h3>
         <p>
           We deploy only what you need and when you need it, ensuring that you
@@ -37,7 +37,7 @@
           height="100%"
         />
       </li>
-      <li class="card" role="listitem">
+      <li class="card">
         <h3>Domain Knowledge</h3>
         <p>
           We blend domain knowledge with cutting-edge AI-Solutions to solve
@@ -51,7 +51,7 @@
           height="100%"
         />
       </li>
-      <li class="card" role="listitem">
+      <li class="card">
         <h3>Quick Processing</h3>
         <p>
           Automated data capture and workflows cut processing time, helping your
@@ -78,10 +78,16 @@
     .container {
       .service-cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 2rem;
         list-style-type: none;
         padding: 0;
+        @include container-query(tablets) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include container-query(small-laptop) {
+          grid-template-columns: repeat(4, 1fr);
+        }
 
         .card {
           display: grid;
@@ -89,6 +95,7 @@
           background-color: $light;
           border-radius: 8px;
           padding: 1rem 1rem 0;
+          gap: 1.5rem;
           overflow: hidden;
           box-shadow: $drop-shadow;
           border-left: 4px solid $brand-primary;

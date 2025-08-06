@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import ServiceItem from "./ServiceItem.astro";
 
 const services = (await getCollection("services")).sort(
@@ -35,23 +35,10 @@ const services = (await getCollection("services")).sort(
   #services {
     container-type: inline-size;
     background: $gradient-bg;
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      padding: 4rem 1rem;
-
-      h2 {
-        line-height: 1.4;
-        font-weight: $bold;
-        color: $brand-primary;
-      }
-
-      .services-list {
-        display: grid;
-        list-style-type: none;
-        padding: 0;
-      }
+    .services-list {
+      display: grid;
+      list-style-type: none;
+      padding: 0;
     }
   }
 </style>

@@ -1,0 +1,16 @@
+---
+const { title, ...rest } = Astro.props;
+---
+
+<div class="tab-item" {...rest}>
+  <slot />
+</div>
+
+<style>
+  .tab-item {
+    display: none;
+  }
+  .tab-item.active {
+    display: block;
+  }
+</style>

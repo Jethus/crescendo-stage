@@ -37,6 +37,7 @@ textarea {
 
 section {
   padding: 4rem 0;
+  container-type: inline-size;
   @include container-query(tablets) {
     padding: 2rem 0;
   }

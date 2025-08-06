@@ -46,7 +46,8 @@
 @mixin btn-base {
   font-size: var(--font-size-md);
   @include transition-fast(transform, background-color);
-  padding: 0.75rem 2rem;
+  width: 100%;
+  padding: 0.5rem 2rem;
   border-radius: 0.25rem;
   color: $light;
   background-color: $brand-action;
@@ -66,12 +67,10 @@
 
 @mixin btn-primary {
   @include btn-base;
-  width: 100%;
 }
 
 @mixin btn-secondary {
   @include btn-base;
-  width: 100%;
   background-color: $light;
   border: 2px solid $brand-text;
   color: $brand-primary;
@@ -80,6 +79,7 @@
     background-color: color.scale($off-white-bg, $lightness: -10%);
   }
 }
+
 // Fluid font variable calculations
 @mixin fluid-font-sizes {
   @for $i from 1 through list.length($type-steps) {

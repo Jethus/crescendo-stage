@@ -12,9 +12,14 @@ const { heading, image, order, description } = Astro.props;
     <h3>{heading}</h3>
     <p>{description}</p>
   </div>
-  <figure class="service-image">
-    <Image src={image} alt={heading} width={640} height={360} loading="lazy" />
-  </figure>
+  <Image
+    src={image}
+    class="service-image"
+    alt=""
+    width={640}
+    height={360}
+    loading="lazy"
+  />
 </article>
 
 <style lang="scss">
@@ -22,9 +27,7 @@ const { heading, image, order, description } = Astro.props;
     display: flex;
     padding: 2rem 4rem;
     gap: 4rem;
-    p {
-      font-size: var(--font-size-md);
-    }
+
     &.flipped {
       flex-direction: row-reverse;
     }
