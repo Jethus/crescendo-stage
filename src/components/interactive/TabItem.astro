@@ -6,11 +6,14 @@ const { title, ...rest } = Astro.props;
   <slot />
 </div>
 
-<style>
+<style lang="scss">
+  @use "@styles" as *;
   .tab-item {
+    @include flex-group-col;
     display: none;
+    align-items: flex-start;
   }
   .tab-item.active {
-    display: block;
+    display: flex;
   }
 </style>

@@ -50,6 +50,7 @@ td {
 h1,
 .h1 {
   font-size: var(--font-size-xxxl);
+  font-weight: $black;
 }
 
 h2,
@@ -91,4 +92,8 @@ a:not([class*="btn"]) {
   &:hover {
     color: $brand-action;
   }
+}
+
+ul {
+  padding-left: 2.5rem;
 }

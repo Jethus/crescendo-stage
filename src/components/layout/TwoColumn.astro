@@ -32,9 +32,10 @@ const { title, heading, id, reverse = false } = Astro.props;
       }
       .container {
         flex-direction: column;
+        gap: 4rem;
         .flex-group-col {
           align-items: flex-start;
-          justify-content: center;
+          justify-content: flex-start;
           h1 {
             font-size: var(--font-size-xxxl);
             line-height: 1.4;

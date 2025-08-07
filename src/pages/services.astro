@@ -4,6 +4,7 @@ import TwoColumn from "../components/layout/TwoColumn.astro";
 import Tabs from "../components/interactive/Tabs.astro";
 import ImageBlock from "../components/primitives/ImageBlock.astro";
 import softwareImage from "../assets/webp/software.webp";
+import reportsImage from "../assets/webp/reports.webp";
 ---
 
 <Layout title="Our Services" description="Lorem ipsum dolor sit amet">
@@ -19,7 +20,7 @@ import softwareImage from "../assets/webp/software.webp";
     <ImageBlock
       slot="right"
       src={softwareImage}
-      alt="AI Solutions"
+      alt=""
       width="1359"
       height="750"
       loading="eager"
@@ -30,5 +31,28 @@ import softwareImage from "../assets/webp/software.webp";
   </TwoColumn>
   <TwoColumn title="AI Configure" id="ai-configure">
     <Tabs slot="left" />
+    <ImageBlock
+      slot="right"
+      src={reportsImage}
+      alt=""
+      width="600"
+      height="900"
+      loading="eager"
+      class="right-image"
+      layout="constrained"
+      />
   </TwoColumn>
 </Layout>
+
+<style lang="scss" is:global>
+  @use "@styles" as *;
+
+  #ai-configure {
+    .right-side {
+      flex: 0 0 50%;
+      img {
+        box-shadow: $drop-shadow;
+        border-radius: .5rem;
+      }
+    }
+  }

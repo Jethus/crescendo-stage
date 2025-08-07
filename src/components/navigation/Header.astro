@@ -65,6 +65,8 @@ import HeaderLink from "./HeaderLink.astro";
     transform-origin: top center;
     margin-inline: auto;
     border-radius: 0;
+    will-change: transform;
+    overflow-anchor: none;
     transition:
       transform 0.35s ease,
       width 0.35s ease,
@@ -270,10 +272,10 @@ import HeaderLink from "./HeaderLink.astro";
   const shrink_threshold = 40;
   const expand_threshold = 20;
   let isShrunk = false;
+  let ticking = false;
 
   const onScroll = () => {
     const y = window.scrollY;
-
     if (!isShrunk && y > shrink_threshold) {
       nav.classList.add("is-shrunk");
       isShrunk = true;
@@ -281,10 +283,18 @@ import HeaderLink from "./HeaderLink.astro";
       nav.classList.remove("is-shrunk");
       isShrunk = false;
     }
+    ticking = false;
+  };
+
+  const onScrollThrottled = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
   };
 
   onScroll();
-  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("scroll", onScrollThrottled, { passive: true });
 
   const toggle = document.getElementById("nav-toggle");
   const mobileMenu = document.getElementById("mobile-nav");
