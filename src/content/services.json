@@ -3,28 +3,28 @@
     "id": "ai-solutions",
     "heading": "AI Solutions",
     "description": "Explore our range of services designed to help you achieve your goals.",
-    "image": "../assets/svgs/ai-solutions.svg",
+    "image": "/src/assets/svgs/ai-solutions.svg",
     "order": 1
   },
   {
     "id": "backend-support",
     "heading": "Backend Support",
     "description": "Delegate back-office tasks to our hybrid model of AI tools and trained specialists. Optimized for quality, speed, and cost.",
-    "image": "../assets/svgs/backend-support.svg",
+    "image": "/src/assets/svgs/backend-support.svg",
     "order": 2
   },
   {
     "id": "consulting",
     "heading": "Consulting",
     "description": "Benefit from our expert guidance to refine processes, optimize performance, and drive sustainable growth.",
-    "image": "../assets/svgs/consulting.svg",
+    "image": "/src/assets/svgs/consulting.svg",
     "order": 3
   },
   {
     "id": "data-analytics",
     "heading": "Data Analytics",
     "description": "Unlock deeper insights from your financial and operational data with advanced modeling tailored to your business needs.",
-    "image": "../assets/svgs/data-analytics.svg",
+    "image": "/src/assets/svgs/data-analytics.svg",
     "order": 4
   }
 ]
