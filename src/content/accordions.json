@@ -1,0 +1,19 @@
+[
+  {
+    "name": "cabailities",
+    "items": [
+      {
+        "title": "Invoice Processing & Data Entry",
+        "answer": "answer",
+        "order": 1
+      },
+      {
+        "title": "Vendor & Contract Administration",
+        "answer": "Manage contract updates, supplier follow-ups, and compliance logs with standardized templates and escalation workflows.",
+        "order": 1
+      },
+      { "title": "title", "answer": "answer", "order": 1 },
+      { "title": "title", "answer": "answer", "order": 1 }
+    ]
+  }
+]

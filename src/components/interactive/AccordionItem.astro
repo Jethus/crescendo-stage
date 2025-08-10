@@ -1,0 +1,16 @@
+---
+export interface Props {
+  id?: string;
+  title?: string; // optional if you provide <slot name="summary" />
+  initiallyOpen?: boolean;
+}
+
+const { id, title, initiallyOpen = false } = Astro.props as Props;
+---
+
+<details id={id} {...initiallyOpen ? { open: true } : {}}>
+  <summary>
+    <slot name="summary">{title}</slot>
+  </summary>
+  <slot />
+</details>

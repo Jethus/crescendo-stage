@@ -3,12 +3,18 @@ import Layout from "../layouts/Basic.astro";
 import TwoColumn from "../components/layout/TwoColumn.astro";
 import Tabs from "../components/interactive/Tabs.astro";
 import ImageBlock from "../components/primitives/ImageBlock.astro";
+import Card from "../components/primitives/Card.astro";
 import softwareImage from "../assets/webp/software.webp";
 import reportsImage from "../assets/webp/reports.webp";
 ---
 
 <Layout title="Our Services" description="Lorem ipsum dolor sit amet">
-  <TwoColumn title="AI Solutions" heading="h1" id="ai-solutions">
+  <TwoColumn
+    title="AI Solutions"
+    heading="h1"
+    id="ai-solutions"
+    fullWidth={true}
+  >
     <p slot="left">
       Empower and streamline your operations by automating repetitive tasks such
       as data entry, document review, exception handling and reporting. Our AI
@@ -40,7 +46,38 @@ import reportsImage from "../assets/webp/reports.webp";
       loading="eager"
       class="right-image"
       layout="constrained"
-      />
+    />
+  </TwoColumn>
+  <TwoColumn title="Process Automation" id="process-automation" heading="h2">
+    <p slot="left">
+      Streamline your operations by automating repetitive tasks—data entry,
+      invoice ingestion and matching, exception handling, reporting, as it
+      learns from every decision.
+    </p>
+    <p slot="left">
+      Learn more about <a href="/kompare-iq">Kompare IQ</a> our AI-based solution
+      that automates your invoice audits by comparing your vendor agreements and
+      pricing terms against each invoice received highlighting errors before they
+      cost you money.
+    </p>
+    <p slot="left">
+      Our AI solutions integrate seamlessly with your existing systems and
+      processes, freeing your team to focus on exception resolution and
+      strategic priorities.
+    </p>
+    <Card title="Key Benefits" slot="right">
+      <ul>
+        <li>
+          Intelligent data extraction from documents such as pdf invoices and
+          contracts
+        </li>
+        <li>Automated rule-based matching and discrepancy flagging</li>
+        <li>Dynamic workflow orchestration and approval routing</li>
+        <li>Real-time dashboards and exception alerts</li>
+      </ul>
+    </Card>
+    <a href="/kompare-iq" class="btn-primary" slot="right">Explore Kompare IQ</a
+    >
   </TwoColumn>
 </Layout>
 
@@ -52,7 +89,14 @@ import reportsImage from "../assets/webp/reports.webp";
       flex: 0 0 50%;
       img {
         box-shadow: $drop-shadow;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
       }
     }
   }
+  #process-automation {
+    background-color: $off-white-bg;
+    .right-side {
+      @include flex-group-col;
+    }
+  }
+</style>

@@ -36,4 +36,17 @@ const tabs = defineCollection({
     }),
 });
 
-export const collections = { blog, services, tabs };
+const accordions = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/accordions",
+  }),
+  schema: ({}) =>
+    z.object({
+      title: z.string(),
+      group: z.string(),
+      order: z.number().optional(),
+    }),
+});
+
+export const collections = { blog, services, tabs, accordions };

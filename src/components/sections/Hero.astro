@@ -37,10 +37,11 @@
     background: $gradient-bg;
     .container {
       max-width: 1600px;
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
     .flex-group-col {
       padding: 0 2rem 3rem;
+      justify-content: center;
       h1 {
         font-size: var(--font-size-xxxl);
         line-height: 1.4;
@@ -48,6 +49,7 @@
         color: $brand-primary;
         span {
           color: $brand-action;
+          white-space: nowrap;
         }
       }
       p {
@@ -57,33 +59,47 @@
         display: flex;
         gap: 1.25rem;
         width: 100%;
+        flex-direction: column;
       }
     }
     .hero-image {
-      position: absolute;
-      width: clamp(800px, 70vw, 1200px);
-      height: clamp(900px, 60vh, 1200px);
       pointer-events: none;
       user-select: none;
-      transform: translate(65%, -20%);
+      transform: translate(10vw, -5%);
+      position: absolute;
+      opacity: 0.25;
+      z-index: -1;
+      max-height: 450px;
+      width: auto;
     }
-    @include container-query(tablets) {
+    @include container-query(large-mobile) {
+      .flex-group-col {
+        .flex-group-row {
+          flex-direction: row;
+        }
+      }
+      .hero-image {
+        transform: translate(40vw, -5%);
+        position: absolute;
+        opacity: 0.25;
+        z-index: -1;
+      }
+    }
+    @include container-query(small-laptop) {
       .container {
         flex-direction: row;
       }
       align-items: center;
-      padding: 6rem 4rem;
 
       .flex-group-col {
         flex: 0 0 50%;
-        min-width: 760px;
       }
       .hero-image {
-      }
-    }
-
-    @include container-query(large-laptop) {
-      .hero-image {
+        transform: translate(-5vw, -5%);
+        z-index: 0;
+        opacity: 1;
+        position: relative;
+        max-height: 100%;
       }
     }
   }

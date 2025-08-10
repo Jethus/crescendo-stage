@@ -4,13 +4,14 @@ export type Props = {
   heading?: "h1" | "h2";
   id: string;
   reverse?: boolean;
+  fullWidth?: boolean;
 };
 
-const { title, heading, id, reverse = false } = Astro.props;
+const { title, heading, id, reverse = false, fullWidth = false } = Astro.props;
 ---
 
 <section id={id} class={`two-col ${reverse ? "reverse" : ""}`}>
-  <div class="container">
+  <div class={`container ${fullWidth ? "full-width" : ""}`}>
     <div class="flex-group-col">
       {title && heading === "h1" && <h1>{title}</h1>}
       {title && heading === "h2" && <h2>{title}</h2>}
@@ -55,17 +56,12 @@ const { title, heading, id, reverse = false } = Astro.props;
     }
 
     #ai-solutions {
-      padding: 0;
       background: $gradient-bg;
+      padding: 0;
       .container {
-        max-width: 100%;
         .flex-group-col {
-          padding: 4rem 3rem 4rem 160px;
-          flex: 0 0 55%;
-        }
-        .right-image {
-          flex: 0 0 45%;
-          object-position: 60% center;
+          flex: 0 0 50%;
+          padding: 2rem;
         }
       }
     }
