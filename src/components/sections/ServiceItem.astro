@@ -4,13 +4,13 @@ import { Image } from "astro:assets";
 
 type Props = CollectionEntry<"services">["data"];
 
-const { heading, image, order, description } = Astro.props;
+const { heading, image, order } = Astro.props as Props;
 ---
 
 <article class={`service-item${order % 2 === 0 ? " flipped" : ""}`}>
   <div class="flex-group-col">
     <h3>{heading}</h3>
-    <p>{description}</p>
+    <slot />
   </div>
   <Image
     src={image}

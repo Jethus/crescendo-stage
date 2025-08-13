@@ -1,11 +1,20 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import ServiceItem from "./ServiceItem.astro";
 
-const services = (await getCollection("services")).sort(
-  (a, b) =>
-    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
-    a.data.heading.localeCompare(b.data.heading)
+
+const services = (await getCollection("services"))
+  .sort(
+    (a, b) =>
+      (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+      a.data.heading.localeCompare(b.data.heading)
+  );
+
+const rendered = await Promise.all(
+  services.map(async (service) => {
+    const { Content } = await render(service);
+    return { data: service.data, Content };
+  })
 );
 ---
 
@@ -20,21 +29,28 @@ const services = (await getCollection("services")).sort(
 
     <ul class="services-list" role="list">
       {
-        services.map((service) => (
+        rendered.map(({ data, Content }) => (
           <li role="listitem">
-            <ServiceItem {...service.data} />
+            <ServiceItem {...data}>
+              <Content />
+            </ServiceItem>
           </li>
         ))
       }
     </ul>
   </div>
 </section>
+
+
+
+
+
 <style lang="scss">
   @use "@styles" as *;
 
   #services {
     container-type: inline-size;
-    background: $gradient-bg;
+    background: $light;
     .services-list {
       display: grid;
       list-style-type: none;

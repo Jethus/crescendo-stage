@@ -1,23 +1,26 @@
 ---
-
+import ImageBlock from "../primitives/ImageBlock.astro";
+import closingCta from "../../assets/svgs/closing-cta.svg";
 ---
 
-<!-- update with title and content/slot props, used differently on kompareIQ, rename to CTA -->
+
 <section id="ClosingCTA">
-  <div class="container">
+  <div class="container full-width">
     <div class="flex-group-col">
-      <h2 class="title">Ready to elevate your business?</h2>
-      <p>Book a free discovery session with no strings attached.</p>
-      <a class="btn-secondary" href="/contact">Book a Demo</a>
+      <h2 class="title">{Astro.props.title ?? "Ready to elevate your business?"}</h2>
+      <p>{Astro.props.description ?? "Book a free discovery session with no strings attached."}</p>
+      <a class="btn-secondary" href={Astro.props.link ?? "/contact"}>
+        {Astro.props.cta ?? "Book a Demo"}
+      </a>
     </div>
-    <img
-      loading="lazy"
-      src="/src/assets/svgs/closing-cta.svg"
+    <ImageBlock
+      src={closingCta}
+      class="cta-image"
       alt=""
-      width="100%"
-      height="auto"
-    />
-  </div>
+      width={910}
+      height={600}
+      loading="lazy"
+      >
 </section>
 
 <style lang="scss">
@@ -34,12 +37,11 @@
     padding: 0;
     .container {
       flex-direction: row;
-      grid-column: 2;
       .flex-group-col {
-        padding: 4rem 2rem;
+        padding: 4rem 0 2rem 2rem;
         justify-content: center;
         align-items: flex-start;
-        flex: 0 0 52.5%;
+        flex: 0 0 50%;
         .title {
           color: $light;
         }
@@ -47,8 +49,11 @@
           color: rgba($light, 0.7);
         }
         .btn-secondary {
-          max-width: 60%;
+          max-width: 50%;
         }
+      }
+      .cta-image {
+        object-position: left;
       }
     }
   }

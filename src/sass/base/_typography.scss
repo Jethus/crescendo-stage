@@ -96,4 +96,14 @@ a:not([class*="btn"]) {
 
 ul {
   padding-left: 2.5rem;
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.sticky-heading {
+  position: sticky;
+  top: calc(120px + 3rem); // Mindful of nav
+  z-index: 2;
+  background: inherit;
 }

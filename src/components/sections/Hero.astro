@@ -1,5 +1,6 @@
 ---
-
+import ImageBlock from "../primitives/ImageBlock.astro"
+import heroImage from "../../assets/svgs/hero.svg"
 ---
 
 <section id="hero">
@@ -19,12 +20,13 @@
         <a href="/services" class="btn-secondary">Learn More</a>
       </div>
     </div>
-    <img
-      loading="eager"
+    <ImageBlock
+      priority
       class="hero-image"
-      src="/src/assets/svgs/hero.svg"
-      width="100%"
-      height="auto"
+      src={heroImage}
+      width={1343}
+      height={972}
+      alt=""
     />
   </div>
 </section>

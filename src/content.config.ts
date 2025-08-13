@@ -18,12 +18,14 @@ const blog = defineCollection({
 
 const services = defineCollection({
   // Load Markdown files in the `src/content/services/` directory.
-  loader: file("./src/content/services.json"),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/services",
+  }),
   schema: ({ image }) =>
     z.object({
       heading: z.string(),
       image: image(),
-      description: z.string(),
       order: z.number(),
     }),
 });
@@ -36,17 +38,17 @@ const tabs = defineCollection({
     }),
 });
 
-const accordions = defineCollection({
+const lists = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
     base: "./src/content/accordions",
   }),
   schema: ({}) =>
     z.object({
-      title: z.string(),
+      heading: z.string(),
       group: z.string(),
       order: z.number().optional(),
     }),
 });
 
-export const collections = { blog, services, tabs, accordions };
+export const collections = { blog, services, tabs, lists };

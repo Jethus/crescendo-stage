@@ -46,7 +46,7 @@ section {
   padding: 2rem;
   display: grid;
   grid-template-columns:
-    1fr minmax(0, calc($content-width / 2)) minmax(0, $content-width / 2)
+    1fr minmax(0, calc($content-width / 2)) minmax(0, calc($content-width / 2))
     1fr;
   @include container-query(small-laptop) {
     padding: 4rem 2rem;
