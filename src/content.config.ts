@@ -41,7 +41,7 @@ const tabs = defineCollection({
 const lists = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/accordions",
+    base: "./src/content/lists",
   }),
   schema: ({}) =>
     z.object({

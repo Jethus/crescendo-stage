@@ -1,16 +1,18 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../../assets/svgs/CS-logo.svg";
 const today = new Date();
 ---
 
 <footer>
   <div class="flex-group-row">
     <a href="/" class="logo" aria-label="Crescendo Stage">
-      <img
+      <Image
         loading="lazy"
-        src="/src/assets/svgs/CS-logo.svg"
+        src={logo}
         alt="Crescendo Stage"
-        width="100%"
-        height="100px"
+        width={515}
+        height={100}
       />
     </a>
     <ul class="footer-links">
@@ -34,14 +36,20 @@ const today = new Date();
     background-color: $light;
     color: $dark;
     text-align: center;
+    padding-inline: $gutter;
     .flex-group-row {
-      gap: 4rem;
+      gap: 0;
       width: 100%;
       justify-content: center;
-      margin-bottom: 0.5rem;
-      a {
-        width: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      .logo {
         height: 100px;
+        margin-bottom: 1rem;
+        img {
+          width: 100%;
+          height: 100px;
+        }
       }
     }
     .footer-links {
@@ -49,15 +57,31 @@ const today = new Date();
       list-style: none;
       padding: 0;
       text-align: left;
+      margin-bottom: 1rem;
 
       li {
         margin-bottom: 0.25rem;
-        a {
-          text-decoration: none;
-          @include transition-fast(color);
-
-          &:hover {
-            color: $brand-action;
+      }
+    }
+    @include container-query(large-mobile) {
+      .flex-group-row {
+        .logo {
+          height: 80px;
+          img {
+            height: 80px;
+          }
+        }
+      }
+    }
+    @include container-query(tablets) {
+      .flex-group-row {
+        gap: 4rem;
+        flex-direction: row;
+        align-items: center;
+        .logo {
+          height: 80px;
+          img {
+            height: 80px;
           }
         }
       }

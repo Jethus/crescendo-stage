@@ -54,6 +54,8 @@
   box-shadow: 0 4px 16px $brand-action;
   text-align: center;
   z-index: 1;
+  text-decoration: none;
+  border: none;
 
   &:hover {
     cursor: pointer;
@@ -61,7 +63,7 @@
   }
 
   &:focus-visible {
-    @include focus-style($dark);
+    @include focus-style($brand-action);
   }
 }
 
@@ -155,15 +157,6 @@
   font-family: $body-font;
   font-size: 1rem;
   line-height: $line-height-normal;
-}
-
-// Links
-@mixin link-style($colour) {
-  color: $colour;
-
-  &:hover {
-    color: $brand-action;
-  }
 }
 
 @mixin focus-style($colour) {

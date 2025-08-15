@@ -27,34 +27,61 @@ import closingCta from "../../assets/svgs/closing-cta.svg";
   @use "@styles" as *;
 
   #ClosingCTA {
-    background: linear-gradient(
+    background-color: $brand-action;
+    padding: 0;
+    .container {
+      flex-direction: row;
+      .flex-group-col {
+        flex: 1 1 100%;
+        padding: 2rem $gutter;
+        justify-content: center;
+        align-items: flex-start;
+        .title {
+          color: $light;
+          font-size: var(--font-size-xxxl);
+        }
+        p {
+          color: rgba($light, 0.7);
+        }
+        .btn-secondary {
+          max-width: 100%;
+          @include transition-fast(max-width);
+        }
+      }
+      .cta-image {
+        display: none;
+        object-position: left;
+      }
+    }
+    @include container-query(tablets) {
+      background: linear-gradient(
       to right,
       $brand-action 0%,
       $brand-action 62.5%,
       $light 62.5%,
       $light 100%
     );
-    padding: 0;
     .container {
-      flex-direction: row;
       .flex-group-col {
-        padding: 4rem 0 2rem 2rem;
-        justify-content: center;
-        align-items: flex-start;
         flex: 0 0 50%;
-        .title {
-          color: $light;
-        }
-        p {
-          color: rgba($light, 0.7);
-        }
+        padding: 4rem 0 2rem 2rem;
         .btn-secondary {
-          max-width: 50%;
+          max-width: 70%;
         }
       }
-      .cta-image {
-        object-position: left;
-      }
+        .cta-image {
+          display: block;
+        }
+    }
+    }
+    @include container-query(large-laptop) {
+.container {
+  .flex-group-col {
+    .btn-secondary {
+      max-width: 60%;
+    }
+  }
+}
     }
   }
 </style>

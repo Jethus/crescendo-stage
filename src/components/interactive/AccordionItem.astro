@@ -58,12 +58,12 @@ const panelId = `${group}-panel-${order}`;
   }
     &:hover,
     &:focus-visible {
-      background: color.scale($off-white-bg, $lightness: -10%);
+      background-color: color.scale($off-white-bg, $lightness: -10%);
     }
   }
   .accordion-panel {
     max-height: 0;
-    border-bottom: 2px solid $brand-primary;
+    border-bottom: 2px solid rgba($brand-primary, 0.25);
     pointer-events: none;
     padding: 0 1rem;
     overflow: hidden;

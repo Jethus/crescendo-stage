@@ -11,7 +11,10 @@ import Accordion from "../components/interactive/Accordion.astro";
 import ClosingCTA from "../components/sections/ClosingCTA.astro";
 ---
 
-<Layout title="Our Services" description="Lorem ipsum dolor sit amet">
+<Layout
+  title="Our Services"
+  description="Discover Crescendo Stage's AI solutions and digital services for automating operations, streamlining workflows, and driving enterprise growth."
+>
   <TwoColumn
     title="AI Solutions"
     heading="h1"
@@ -141,19 +144,36 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
   background: $gradient-bg;
   padding: 0;
   .container {
+	  flex-direction: column-reverse;
+	  .right-image {
+		max-height: 250px;
+	  }
     .flex-group-col {
       flex: 0 0 50%;
-      padding: 2rem;
+      padding: 2rem $gutter;
+	  align-items:flex-start;
     }
-  }
+	@include container-query(small-laptop) {
+		flex-direction:row;
+		.right-image {
+			max-height: 100%;
+		}
+	}
 }
+  }
   #ai-configure {
     background-color: $off-white-bg;
     .right-side {
+      display: none;
       flex: 0 0 50%;
       img {
         box-shadow: $drop-shadow;
         border-radius: 0.5rem;
+      }
+    }
+    @include container-query(small-laptop) {
+      .right-side {
+        display: block;
       }
     }
   }
@@ -175,13 +195,26 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
     .left-side {
       flex: 0 0 25%;
     }
+    .rifght-side {
+      flex: 0 0 75%;
+    }
   }
   #data-analytics, #consulting {
     .left-side {
       flex: 0 0 55%;
     }
+    .right-side {
+      flex: 0 0 45%;
+    }
   }
   #data-analytics {
     background-color: $off-white-bg;
+    .left-side {
+      flex: 0 0 55%;
+    }
+    .right-side {
+      flex: 0 0 45%;
+    }
   }
+
 </style>

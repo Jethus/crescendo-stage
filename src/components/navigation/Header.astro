@@ -59,8 +59,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 15%;
-    padding: 1rem 1.5rem;
+    padding: .75rem 1.25rem;
     background: $light;
     box-shadow: 0 2px 4px rgba($dark, 0.12);
     transform: scaleX(1) translateY(0);
@@ -69,17 +68,15 @@ import logo from "../../assets/svgs/CS-logo.svg";
     border-radius: 0;
     will-change: transform;
     overflow-anchor: none;
-    transition:
-      transform 0.35s ease,
-      width 0.35s ease,
-      padding 0.35s ease,
-      box-shadow 0.35s ease,
-      border-radius 0.35s ease;
+    @include transition-slow(transform, width, padding, box-shadow, border-radius);
     .logo {
-      height: 60px;
-      img {
-        height: 60px;
-      }
+      @include transition-slow(height);
+      height: 40px;
+        img {
+      @include transition-slow(height);
+          width: auto;
+          height: 40px;
+        }
     }
     &.is-shrunk {
       transform: scale(0.94) translateY(2rem);
@@ -114,8 +111,8 @@ import logo from "../../assets/svgs/CS-logo.svg";
   }
 
   // burger menu style, variables to ensure lines are square
-  $hamburger-width: 48px;
-  $hamburger-height: 32px;
+  $hamburger-width: 40px;
+  $hamburger-height: 24px;
   $patty-height: 4px;
   .hamburger {
     display: flex;
@@ -185,21 +182,24 @@ import logo from "../../assets/svgs/CS-logo.svg";
 
   // mobile slide-in drawer
   .mobile-links {
+    display: flex;
     position: fixed;
+    font-size: var(--font-size-md);
     inset-block-start: 0;
     inset-inline-end: 0;
     width: 35vw;
+    min-width: 200px;
     height: 100vh;
-    padding-top: 6rem;
-    background: #fff;
-    display: flex;
+    padding-top: 5rem;
+    align-items: flex-end;
+    background: $light;
+    font-weight: $bold;
     flex-direction: column;
     gap: 0.25rem;
     transform: translateX(120%);
-    transition:
-      transform 0.35s ease,
-      box-shadow 0.35s ease;
+    @include transition-slow(transform, box-shadow);
     box-shadow: none;
+    text-align:right;
     z-index: 10;
 
     &[data-visible="true"] {
@@ -208,13 +208,11 @@ import logo from "../../assets/svgs/CS-logo.svg";
     }
 
     a {
-      font-size: var(--font-size-md);
-      font-weight: $bold;
       width: 100%;
-      text-align: center;
-      padding: 1rem 0;
+      padding: 1rem;
       @include transition-fast(background-color);
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background-color: $off-white-bg;
       }
     }
@@ -225,7 +223,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
     transform: scale(1) translateY(0);
     width: 100%;
     border-radius: 0;
-    padding: 1rem 1.5rem;
+    padding: .75rem 1.25rem;
     .logo,
     .desktop-links,
     .hamburger,
@@ -240,22 +238,32 @@ import logo from "../../assets/svgs/CS-logo.svg";
     }
   }
 
+
   // tablet style adjustments
   @include container-query(tablets) {
     nav {
-      padding: 1.5rem 3rem;
+      padding: 1.5rem 2rem;
+      .logo {
+        height: 44px;
+        & img {
+          height: 44px;
+        }
+      }
       &.is-shrunk {
         transform: scale(0.94) translateY(2rem);
         width: calc(100% - 4rem);
         border-radius: 2rem;
-        padding: 1rem 2rem;
         box-shadow: 0 4px 8px rgba($dark, 0.12);
+        padding: 1rem 1.5rem;
       }
       .desktop-links {
         display: flex;
         align-items: center;
         gap: 2.5rem;
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-base-md);
+        #contact {
+        font-size: var(--font-size-base-md);
+        }
         font-weight: bold;
       }
       #contact {
@@ -264,6 +272,22 @@ import logo from "../../assets/svgs/CS-logo.svg";
       .hamburger,
       .mobile-links {
         display: none;
+      }
+    }
+  }
+  @include container-query(small-laptop) {
+    nav {
+      .logo {
+        height: 50px;
+        & img {
+          height: 50px;
+        }
+      }
+      .desktop-links {
+        font-size: var(--font-size-md);
+        #contact {
+          font-size: var(--font-size-md);
+        }
       }
     }
   }
