@@ -11,4 +11,4 @@ title: Custom Built
 <li>Standardized contract term libraries</li>
 <li>Training & ongoing support</li>
 </ul>
-<a href="/contact " class="btn-primary">Book a Demo</a>
+<a href="/contact " class="btn-primary">Learn more</a>
