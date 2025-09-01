@@ -16,15 +16,20 @@ const today = new Date();
       />
     </a>
     <ul class="footer-links">
-      <li><a href="/about">About</a></li>
+      <li><a href="/about-us">About Us</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact Us</a></li>
-      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
     </ul>
   </div>
-  <p>&copy; {today.getFullYear()} Crescendo Stage. All rights reserved.</p>
-  <p>Designed & Coded by <a href="https://pixelboost.ca">Pixelboost</a>.</p>
+  <p class="copyright">
+    &copy; {today.getFullYear()} Crescendo Stage. All rights reserved.
+  </p>
+  <p class="credit">
+    Designed & Coded by <a href="https://pixelboost.ca">Pixelboost</a>.
+  </p>
 </footer>
+
 <style lang="scss">
   @use "@styles" as *;
   footer {
@@ -45,7 +50,6 @@ const today = new Date();
       align-items: flex-start;
       .logo {
         height: 100px;
-        margin-bottom: 1rem;
         img {
           width: 100%;
           height: 100px;
@@ -57,7 +61,6 @@ const today = new Date();
       list-style: none;
       padding: 0;
       text-align: left;
-      margin-bottom: 1rem;
 
       li {
         margin-bottom: 0.25rem;
@@ -75,15 +78,28 @@ const today = new Date();
     }
     @include container-query(tablets) {
       .flex-group-row {
-        gap: 4rem;
-        flex-direction: row;
+        gap: 2rem;
         align-items: center;
+        margin-bottom: 0.5rem;
         .logo {
           height: 80px;
           img {
             height: 80px;
           }
         }
+        .footer-links {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          gap: 2rem;
+          li {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .credit {
+        width: 100%;
+        text-align: right;
       }
     }
   }

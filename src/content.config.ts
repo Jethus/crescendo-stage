@@ -34,7 +34,8 @@ const tabs = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/tabs" }),
   schema: ({}) =>
     z.object({
-      title: z.string(),
+      heading: z.string(),
+      order: z.number(),
     }),
 });
 

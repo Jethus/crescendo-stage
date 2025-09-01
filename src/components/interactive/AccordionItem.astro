@@ -1,39 +1,40 @@
 ---
-import { Image } from "astro:assets"
 import Plus from "../../assets/svgs/plus.svg";
 const { heading, group, order, ...rest } = Astro.props;
 const buttonId = `${group}-btn-${order}`;
 const panelId = `${group}-panel-${order}`;
 ---
 
-<div class="accordion-item" {...rest}>
-
-    <button
+<div class={`accordion-item${order % 2 === 1 ? " alternate" : ""}`} {...rest}>
+  <button
     id={buttonId}
     class="accordion-summary"
     aria-expanded="false"
     aria-controls={panelId}
     type="button"
-    >
+  >
     <slot name="summary">{heading}</slot>
     <Plus width={48} height={48} />
-    </button>
-    <div
-      id={panelId}
-      class="accordion-panel"
-      role="region"
-      aria-labelledby={buttonId}
-    >
+  </button>
+  <div
+    id={panelId}
+    class="accordion-panel"
+    role="region"
+    aria-labelledby={buttonId}
+  >
     <div class="accordion-content">
       <slot />
     </div>
-</div>
+  </div>
 </div>
 
 <style lang="scss">
   @use "@styles" as *;
   @use "sass:color";
-  
+
+  .alternate {
+    background-color: color.scale($off-white-bg, $lightness: -2%);
+  }
   .accordion-summary {
     width: 100%;
     text-align: left;
@@ -51,11 +52,11 @@ const panelId = `${group}-panel-${order}`;
     svg {
       @include transition-slow(transform);
     }
-  &:has(~ .open) {
-    svg {
-      transform: rotate(135deg);
+    &:has(~ .open) {
+      svg {
+        transform: rotate(45deg);
+      }
     }
-  }
     &:hover,
     &:focus-visible {
       background-color: color.scale($off-white-bg, $lightness: -10%);
@@ -81,7 +82,3 @@ const panelId = `${group}-panel-${order}`;
     }
   }
 </style>
-
-
-
-

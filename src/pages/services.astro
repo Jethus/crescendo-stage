@@ -87,43 +87,49 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
   </TwoColumn>
   <OneColumn title="Back-End Process Support" id="back-end" heading="h2">
     <p>
-      We provide scalable and reliable support for essential back-office operations—blending AI-powered automation with trained personnel to handle tasks like invoice processing, document validation, vendor coordination, data entry, and reconciliation. Designed for growing companies that want operational excellence without growing their headcount, this hybrid approach reduces costs, increases accuracy, and provides flexible coverage as your needs evolve.
+      We provide scalable and reliable support for essential back-office
+      operations—blending AI-powered automation with trained personnel to handle
+      tasks like invoice processing, document validation, vendor coordination,
+      data entry, and reconciliation. Designed for growing companies that want
+      operational excellence without growing their headcount, this hybrid
+      approach reduces costs, increases accuracy, and provides flexible coverage
+      as your needs evolve.
     </p>
   </OneColumn>
   <TwoColumn id="capabilities">
-    <h3 class="sticky-heading" slot="left">
-      Capabilities
-    </h3>
+    <h3 class="sticky-heading" slot="left">Capabilities</h3>
     <Accordion slot="right" group="capabilities" />
   </TwoColumn>
   <TwoColumn id="benefits">
-    <h3 class="sticky-heading" slot="left">
-      Benefits
-    </h3>
+    <h3 class="sticky-heading" slot="left">Benefits</h3>
     <Accordion slot="right" group="benefits" />
   </TwoColumn>
   <OneColumn id="back-end2">
     <p>
-      Whether you’re trying to manage growing volumes or streamline workflows without hiring more staff, our Back-End Process Support provides the right balance of technology and expert service—customized to fit your operational reality.
+      Whether you’re trying to manage growing volumes or streamline workflows
+      without hiring more staff, our Back-End Process Support provides the right
+      balance of technology and expert service—customized to fit your
+      operational reality.
     </p>
   </OneColumn>
-  <TwoColumn
-    title="Data Analytics & Modeling"
-    id="data-analytics"
-    heading="h2"
-  >
+  <TwoColumn title="Data Analytics & Modeling" id="data-analytics" heading="h2">
     <p slot="left">
-      Transform raw data into strategic insights with our end-to-end analytics services. From exploratory data analysis to predictive forecasting, we help you make data-driven decisions.
+      Transform raw data into strategic insights with our end-to-end analytics
+      services. From exploratory data analysis to predictive forecasting, we
+      help you make data-driven decisions.
     </p>
     <p slot="left">
-      Whether you need on-off analytics projects or an embedded analytics service, we can help you translate complexity into clarity.
+      Whether you need on-off analytics projects or an embedded analytics
+      service, we can help you translate complexity into clarity.
     </p>
     <a href="/contact" class="btn-primary" slot="left">Book a Demo</a>
     <Accordion slot="right" group="data-analytics" />
   </TwoColumn>
   <TwoColumn title="Consulting Services" id="consulting" heading="h2">
     <p slot="left">
-      Partner with our experts to align your technology roadmap with business goals. We offer strategic guidance on AI adoption, process improvement, and organizational change management.
+      Partner with our experts to align your technology roadmap with business
+      goals. We offer strategic guidance on AI adoption, process improvement,
+      and organizational change management.
     </p>
     <Card title="Engagements" slot="right">
       <ul>
@@ -141,28 +147,32 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
   @use "@styles" as *;
 
   #ai-solutions {
-  background: $gradient-bg;
-  padding: 0;
-  .container {
-	  flex-direction: column-reverse;
-	  .right-image {
-		max-height: 250px;
-	  }
-    .flex-group-col {
-      flex: 0 0 50%;
-      padding: 2rem $gutter;
-	  align-items:flex-start;
+    background: $gradient-bg;
+    padding: 0;
+    .container {
+      flex-direction: column-reverse;
+      .right-image {
+        max-height: 250px;
+      }
+      .flex-group-col {
+        flex: 0 0 50%;
+        padding: 2rem $gutter;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      @include container-query(small-laptop) {
+        flex-direction: row;
+        .right-image {
+          max-height: 100%;
+        }
+      }
     }
-	@include container-query(small-laptop) {
-		flex-direction:row;
-		.right-image {
-			max-height: 100%;
-		}
-	}
-}
   }
   #ai-configure {
     background-color: $off-white-bg;
+    .left-side {
+      justify-content: center;
+    }
     .right-side {
       display: none;
       flex: 0 0 50%;
@@ -183,7 +193,10 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       @include flex-group-col;
     }
   }
-  #back-end, #capabilities, #benefits, #back-end2 {
+  #back-end,
+  #capabilities,
+  #benefits,
+  #back-end2 {
     background-color: $white-bg;
   }
   #back-end {
@@ -191,7 +204,8 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       align-items: flex-start;
     }
   }
-  #capabilities, #benefits {
+  #capabilities,
+  #benefits {
     .left-side {
       flex: 0 0 25%;
     }
@@ -199,7 +213,8 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       flex: 0 0 75%;
     }
   }
-  #data-analytics, #consulting {
+  #data-analytics,
+  #consulting {
     .left-side {
       flex: 0 0 55%;
     }
@@ -216,5 +231,4 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       flex: 0 0 45%;
     }
   }
-
 </style>

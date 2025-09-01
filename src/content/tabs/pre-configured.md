@@ -1,14 +1,15 @@
 ---
-title: Pre-configured
+heading: Pre-configured
+order: 1
 ---
 
-<h2>Built for you</h2>
-<p>Tailored AI and automation workflows designed around your unique business processes. Our team of data scientists and engineers collaborates with you to define objectives, map data flows, and deliver a solution that scales with your growth.</p>
+<h2>Jump-start your AI deployment</h2>
+<p>Whether you’re in manufacturing, professional services, or IT outsourcing, our pre-configured rule sets and data connectors get you up and running in weeks—not months—so you can capture value immediately.</p>
 <h3>Includes</h3>
 <ul>
-<li>Discovery & scoping</li>
-<li>Data integration & model development</li>
-<li>Testing & validation</li>
-<li>Deployment & ongoing support</li>
+<li>Pre-built functional modules</li>
+<li>Pre-mapped data schemas</li>
+<li>Standardized contract term libraries</li>
+<li>Training & ongoing support</li>
 </ul>
 <a href="/contact " class="btn-primary">Book a Demo</a>

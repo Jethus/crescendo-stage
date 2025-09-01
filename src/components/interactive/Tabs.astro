@@ -2,7 +2,11 @@
 import { getCollection, render } from "astro:content";
 import TabItem from "./TabItem.astro";
 
-const tabs = await getCollection("tabs");
+const tabs = (await getCollection("tabs")).sort(
+  (a, b) =>
+    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+    a.data.heading.localeCompare(b.data.heading)
+);
 
 const rendered = await Promise.all(
   tabs.map(async (tab) => {
@@ -17,7 +21,7 @@ const rendered = await Promise.all(
     {
       rendered.map(({ data }, i) => (
         <button class={`tab-option${i === 0 ? " active" : ""}`} data-index={i}>
-          {data.title}
+          {data.heading}
         </button>
       ))
     }
@@ -46,8 +50,7 @@ const rendered = await Promise.all(
       display: flex;
       width: max-content;
       gap: 1.5rem;
-      border-bottom: 2px solid $brand-text;
-      
+
       .tab-option {
         border: none;
         border-bottom: 4px solid transparent;
@@ -60,7 +63,7 @@ const rendered = await Promise.all(
         z-index: 1;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           bottom: -6px;
@@ -69,7 +72,7 @@ const rendered = await Promise.all(
           background: $brand-action;
           transform: scaleX(0);
           transform-origin: left;
-          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           pointer-events: none;
         }
 
@@ -84,8 +87,7 @@ const rendered = await Promise.all(
         }
       }
     }
-    }
-  
+  }
 </style>
 
 <script is:inline>
@@ -104,9 +106,7 @@ const rendered = await Promise.all(
           t.classList.add("active", i > prevIndex ? "from-left" : "from-right");
         }
       });
-      panels.forEach((p) =>
-        p.classList.toggle("active", p.dataset.index == i)
-      );
+      panels.forEach((p) => p.classList.toggle("active", p.dataset.index == i));
       prevIndex = i;
     });
   });
