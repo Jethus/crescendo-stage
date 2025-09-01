@@ -82,7 +82,7 @@ h5 {
   line-height: $line-height;
 }
 
-a:not([class*="btn"]):not([class*="logo"]) {
+a {
   color: $brand-action;
   text-decoration: none;
   position: relative;
@@ -110,6 +110,32 @@ a:not([class*="btn"]):not([class*="logo"]) {
     transform-origin: right;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
+  }
+}
+
+a.logo,
+a.skip {
+  color: inherit;
+  text-decoration: inherit;
+  &:hover {
+    &::before {
+      display: none;
+    }
+  }
+  &::before {
+    display: none;
+  }
+}
+
+a[class*="btn"],
+#contact {
+  &:hover {
+    &::before {
+      display: none;
+    }
+  }
+  &::before {
+    display: none;
   }
 }
 

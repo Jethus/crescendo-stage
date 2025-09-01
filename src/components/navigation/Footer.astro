@@ -43,7 +43,7 @@ const today = new Date();
     text-align: center;
     padding-inline: $gutter;
     .flex-group-row {
-      gap: 0;
+      gap: 1rem;
       width: 100%;
       justify-content: center;
       flex-direction: column;
@@ -61,10 +61,18 @@ const today = new Date();
       list-style: none;
       padding: 0;
       text-align: left;
+      margin-bottom: 1rem;
 
       li {
         margin-bottom: 0.25rem;
       }
+    }
+    .copyright {
+      margin-bottom: 1rem;
+    }
+    .credit {
+      width: 100%;
+      text-align: center;
     }
     @include container-query(large-mobile) {
       .flex-group-row {
@@ -96,10 +104,9 @@ const today = new Date();
             margin-bottom: 0;
           }
         }
-      }
-      .credit {
-        width: 100%;
-        text-align: right;
+        .credit {
+          text-align: right;
+        }
       }
     }
   }

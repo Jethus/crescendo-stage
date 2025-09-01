@@ -57,6 +57,9 @@ import closingCta from "../../assets/svgs/closing-cta.svg";
             display: none;
             object-position: left;
           }
+          picture {
+            display: none;
+          }
         }
         @include container-query(tablets) {
           background: linear-gradient(
@@ -76,6 +79,9 @@ import closingCta from "../../assets/svgs/closing-cta.svg";
             }
             .cta-image {
               display: block;
+            }
+            picture {
+              display: flex;
             }
           }
         }

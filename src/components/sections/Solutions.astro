@@ -70,11 +70,14 @@ import invoice from "../../assets/png/invoice.png";
         }
         @include container-query(large-laptop) {
           grid-template-columns: repeat(4, 1fr);
+          .card {
+            grid-template-rows: auto 1fr minmax(200px, 220px);
+          }
         }
 
         .card {
           display: grid;
-          grid-template-rows: auto 1fr minmax(200px, 220px);
+          grid-template-rows: auto 1fr minmax(150px, 180px);
           background-color: $light;
           border-radius: 8px;
           padding: 2rem 2rem 0;

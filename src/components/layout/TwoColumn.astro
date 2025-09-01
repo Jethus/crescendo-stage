@@ -33,6 +33,7 @@ const { title, heading, id, reverse = false, fullWidth = false } = Astro.props;
       }
       .container {
         flex-direction: column;
+        gap: 0;
         .flex-group-col {
           align-items: flex-start;
           justify-content: flex-start;
@@ -50,6 +51,7 @@ const { title, heading, id, reverse = false, fullWidth = false } = Astro.props;
       @include container-query(tablets) {
         .container {
           flex-direction: row;
+          gap: 2rem;
         }
       }
     }
