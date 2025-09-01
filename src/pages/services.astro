@@ -15,19 +15,18 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
   title="Our Services"
   description="Discover Crescendo Stage's AI solutions and digital services for automating operations, streamlining workflows, and driving enterprise growth."
 >
-  <TwoColumn
-    title="AI Solutions"
-    heading="h1"
-    id="ai-solutions"
-    fullWidth={true}
-  >
-    <p slot="left">
-      Empower and streamline your operations by automating repetitive tasks such
-      as data entry, document review, exception handling and reporting. Our AI
-      solutions integrate seamlessly with your existing systems and processes,
-      freeing your team to focus on exception resolution and strategic
-      priorities.
-    </p>
+  <TwoColumn title="AI Solutions" id="ai-solutions" fullWidth={true}>
+    <div slot="left" class="flex-text">
+      <h1>AI Solutions</h1>
+      <p>
+        Empower and streamline your operations by automating repetitive tasks
+        such as data entry, document review, exception handling and reporting.
+        Our AI solutions integrate seamlessly with your existing systems and
+        processes, freeing your team to focus on exception resolution and
+        strategic priorities.
+      </p>
+    </div>
+
     <a href="/contact" class="btn-primary" slot="left">Learn more</a>
     <ImageBlock
       slot="right"

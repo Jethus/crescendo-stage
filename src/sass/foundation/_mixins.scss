@@ -147,8 +147,6 @@
 // Font styles
 @mixin header-style {
   font-family: $header-font;
-  line-height: $line-height-small;
-  font-weight: $bold;
   color: $brand-primary;
 }
 

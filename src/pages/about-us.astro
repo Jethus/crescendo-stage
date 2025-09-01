@@ -11,12 +11,15 @@ import abstractImage from "../assets/webp/abstract-poly.webp";
   title="About Us"
   description="Learn about Crescendo Stage, our mission, values, founders, and commitment to innovation, integrity, and collaboration in digital transformation."
 >
-  <TwoColumn title="About Us" heading="h1" id="about-hero" fullWidth={true}>
-    <p slot="left">
-      We believe the future is being built where the intersection of digital
-      technologies and human expertise will empower solutions that will redefine
-      what’s possible.
-    </p>
+  <TwoColumn title="About Us" id="about-hero" fullWidth={true}>
+    <div slot="left" class="flex-text">
+      <h1>About Us</h1>
+      <p>
+        We believe the future is being built where the intersection of digital
+        technologies and human expertise will empower solutions that will
+        redefine what’s possible.
+      </p>
+    </div>
     <ImageBlock
       slot="right"
       src={abstractImage}

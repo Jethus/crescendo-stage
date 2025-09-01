@@ -2,13 +2,11 @@
 import { getCollection, render } from "astro:content";
 import ServiceItem from "./ServiceItem.astro";
 
-
-const services = (await getCollection("services"))
-  .sort(
-    (a, b) =>
-      (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
-      a.data.heading.localeCompare(b.data.heading)
-  );
+const services = (await getCollection("services")).sort(
+  (a, b) =>
+    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+    a.data.heading.localeCompare(b.data.heading)
+);
 
 const rendered = await Promise.all(
   services.map(async (service) => {
@@ -20,12 +18,14 @@ const rendered = await Promise.all(
 
 <section id="services" aria-labelledby="services-heading">
   <div class="container">
-    <h2 id="services-heading">End-to-End services</h2>
-    <p>
-      From intelligent document processing to predictive analytics, our platform
-      streamlines back-office tasks and turns real-time data into bottom-line
-      impact.
-    </p>
+    <div class="flex-text">
+      <h2 id="services-heading">End-to-End services</h2>
+      <p>
+        From intelligent document processing to predictive analytics, our
+        platform streamlines back-office tasks and turns real-time data into
+        bottom-line impact.
+      </p>
+    </div>
 
     <ul class="services-list" role="list">
       {
@@ -40,10 +40,6 @@ const rendered = await Promise.all(
     </ul>
   </div>
 </section>
-
-
-
-
 
 <style lang="scss">
   @use "@styles" as *;
