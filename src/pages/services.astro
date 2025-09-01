@@ -28,7 +28,7 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       freeing your team to focus on exception resolution and strategic
       priorities.
     </p>
-    <a href="/contact" class="btn-primary" slot="left">Book a Demo</a>
+    <a href="/contact" class="btn-primary" slot="left">Learn more</a>
     <ImageBlock
       slot="right"
       src={softwareImage}
@@ -122,7 +122,7 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       Whether you need on-off analytics projects or an embedded analytics
       service, we can help you translate complexity into clarity.
     </p>
-    <a href="/contact" class="btn-primary" slot="left">Book a Demo</a>
+    <a href="/contact" class="btn-primary" slot="left">Learn more</a>
     <Accordion slot="right" group="data-analytics" />
   </TwoColumn>
   <TwoColumn title="Consulting Services" id="consulting" heading="h2">
@@ -147,6 +147,25 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
   @use "@styles" as *;
 
   #ai-solutions {
+    background: $gradient-bg;
+    padding: 0;
+    .container {
+      flex-direction: column-reverse;
+      .right-image {
+        max-height: 250px;
+      }
+      .flex-group-col {
+        flex: 0 0 50%;
+        padding: 2rem $gutter;
+        align-items: flex-start;
+      }
+      @include container-query(small-laptop) {
+        flex-direction: row;
+        .right-image {
+          max-height: 100%;
+        }
+      }
+    }
     background: $gradient-bg;
     padding: 0;
     .container {
