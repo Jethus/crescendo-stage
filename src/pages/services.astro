@@ -151,6 +151,7 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
     padding: 0;
     .container {
       flex-direction: column-reverse;
+      gap: 0;
       .right-image {
         max-height: 250px;
       }
@@ -158,6 +159,11 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
         flex: 0 0 50%;
         padding: 2rem $gutter;
         align-items: flex-start;
+      }
+      @include container-query(tablets) {
+        .container {
+          gap: 2rem;
+        }
       }
       @include container-query(small-laptop) {
         flex-direction: row;

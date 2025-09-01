@@ -110,6 +110,7 @@ import abstractImage from "../assets/webp/abstract-poly.webp";
     padding: 0;
     .container {
       flex-direction: column-reverse;
+      gap: 0;
       .right-image {
         max-height: 250px;
       }
@@ -118,6 +119,11 @@ import abstractImage from "../assets/webp/abstract-poly.webp";
         padding: 2rem $gutter;
         align-items: flex-start;
         justify-content: center;
+      }
+      @include container-query(tablets) {
+        .container {
+          gap: 2rem;
+        }
       }
       @include container-query(small-laptop) {
         flex-direction: row;

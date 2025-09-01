@@ -23,7 +23,10 @@ import ContactForm from "../components/interactive/ContactForm.astro";
   @use "@styles" as *;
   #contact-page {
     background: $gradient-bg;
-    padding: 4rem 0;
+    padding: 2rem 0;
+    .container {
+      gap: 0;
+    }
     .left-side {
       flex: 0 0 40%;
       padding: 2rem $gutter;
@@ -35,8 +38,11 @@ import ContactForm from "../components/interactive/ContactForm.astro";
     .right-side {
       flex: 0 0 60%;
     }
-  }
-
-  #contact-form {
+    @include container-query(tablets) {
+      padding: 4rem;
+      .container {
+        gap: 2rem;
+      }
+    }
   }
 </style>
