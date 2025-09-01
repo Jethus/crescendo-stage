@@ -15,6 +15,16 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
+
+import { init } from "@plausible-analytics/tracker";
+
+init({
+  domain: "crescendo-stage.netlify.app",
+  endpoint: "https://analytics.pixelboost.dev/js/script.js",
+  hashBasedRouting: true,
+  outboundLinks: true,
+  formSubmissions: true,
+});
 ---
 
 <!-- Global Metadata -->
