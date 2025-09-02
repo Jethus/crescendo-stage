@@ -16,15 +16,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
 
-import { init } from "@plausible-analytics/tracker";
-
-init({
-  domain: "crescendo-stage.netlify.app",
-  endpoint: "https://analytics.pixelboost.dev/js/script.js",
-  hashBasedRouting: true,
-  outboundLinks: true,
-  formSubmissions: true,
-});
+declare global {
+  interface Window {
+    plausible?: (...args: any[]) => void;
+  }
+}
 ---
 
 <!-- Global Metadata -->
@@ -91,3 +87,18 @@ init({
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Plausible  -->
+<script
+  is:inline
+  defer
+  data-domain="crescendo-stage.netlify.app"
+  src="https://analytics.pixelboost.dev/js/script.hash.outbound-links.pageview-props.tagged-events.js"
+></script>
+<script is:inline>
+  window.plausible =
+    window.plausible ||
+    function () {
+      (window.plausible.q = window.plausible?.q || []).push(arguments);
+    };
+</script>
