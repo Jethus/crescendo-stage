@@ -20,10 +20,10 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       <h1>AI Solutions</h1>
       <p>
         Empower and streamline your operations by automating repetitive tasks
-        such as data entry, document review, exception handling and reporting.
-        Our AI solutions integrate seamlessly with your existing systems and
-        processes, freeing your team to focus on exception resolution and
-        strategic priorities.
+        such as data entry, document review, exception handling, backend
+        processing and reporting. Our AI solutions integrate seamlessly with
+        your existing systems and processes, freeing your team to focus on
+        exception resolution and strategic priorities.
       </p>
     </div>
 
@@ -60,15 +60,15 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       learns from every decision.
     </p>
     <p slot="left">
-      Learn more about <a href="/kompare-iq">Kompare IQ</a> our AI-based solution
-      that automates your invoice audits by comparing your vendor agreements and
-      pricing terms against each invoice received highlighting errors before they
-      cost you money.
+      Learn more about <a href="/kompare-iq">Kompare IQ</a>™ our AI-based
+      solution that automates your invoice audits by comparing your vendor
+      agreements and pricing terms against each invoice received highlighting
+      errors before they cost you money.
     </p>
     <p slot="left">
-      Our AI solutions integrate seamlessly with your existing systems and
-      processes, freeing your team to focus on exception resolution and
-      strategic priorities.
+      Designed to work hand-in-hand with your existing tools and workflows, our
+      AI solutions remove operational friction—empowering your team to focus on
+      high-value decisions and priorities.
     </p>
     <Card title="Key Benefits" slot="right">
       <ul>
@@ -89,7 +89,8 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       We provide scalable and reliable support for essential back-office
       operations—blending AI-powered automation with trained personnel to handle
       tasks like invoice processing, document validation, vendor coordination,
-      data entry, and reconciliation. Designed for growing companies that want
+      data entry, and reconciliation as well as other accounting and
+      administrative functions. Designed for growing companies that want
       operational excellence without growing their headcount, this hybrid
       approach reduces costs, increases accuracy, and provides flexible coverage
       as your needs evolve.
@@ -118,7 +119,7 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       help you make data-driven decisions.
     </p>
     <p slot="left">
-      Whether you need on-off analytics projects or an embedded analytics
+      Whether you need one-off analytics projects or an embedded analytics
       service, we can help you translate complexity into clarity.
     </p>
     <a href="/contact" class="btn-primary" slot="left">Learn more</a>
@@ -213,6 +214,9 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
     background-color: $light;
     .right-side {
       @include flex-group-col;
+      .btn-primary {
+        max-width: 100%;
+      }
     }
   }
   #back-end,

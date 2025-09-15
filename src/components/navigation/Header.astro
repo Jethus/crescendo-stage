@@ -17,9 +17,9 @@ import logo from "../../assets/svgs/CS-logo.svg";
         />
       </a>
       <div class="desktop-links">
+        <HeaderLink href="/services">Products & Services</HeaderLink>
         <HeaderLink href="/about-us">About Us</HeaderLink>
-        <HeaderLink href="/services">Services</HeaderLink>
-        <HeaderLink id="contact" href="/contact">Contact Us</HeaderLink>
+        <HeaderLink id="contact" href="/contact">Contact</HeaderLink>
       </div>
     </div>
 
@@ -36,9 +36,9 @@ import logo from "../../assets/svgs/CS-logo.svg";
       <span aria-hidden="true"></span>
     </button>
     <div id="mobile-nav" class="mobile-links" data-visible="false">
+      <HeaderLink href="/services">Products & Services</HeaderLink>
       <HeaderLink href="/about-us">About Us</HeaderLink>
-      <HeaderLink href="/services">Services</HeaderLink>
-      <HeaderLink href="/contact">Contact Us</HeaderLink>
+      <HeaderLink href="/contact">Contact</HeaderLink>
     </div>
   </nav>
 </header>
@@ -88,6 +88,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
       justify-content: space-between;
     }
     .logo {
+      transform-origin: center left;
       @include transition-slow(height);
       height: 40px;
       img {
@@ -96,8 +97,13 @@ import logo from "../../assets/svgs/CS-logo.svg";
         height: 40px;
       }
     }
+    .desktop-links,
+    .hamburger,
+    #contact {
+      transform-origin: center right;
+    }
     &.is-shrunk {
-      transform: scale(0.94) translateY(2rem);
+      transform: translateY(2rem);
       width: calc(100% - 2rem);
       border-radius: 1rem;
       padding: 0.5rem 1rem;
@@ -268,7 +274,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
         }
       }
       &.is-shrunk {
-        transform: scale(0.94) translateY(2rem);
+        transform: translateY(2rem);
         width: calc(100% - 4rem);
         border-radius: 2rem;
         box-shadow: 0 4px 8px rgba($dark, 0.12);
@@ -286,6 +292,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
       }
       #contact {
         @include btn-base;
+        padding: 0.5rem 3rem;
       }
       .hamburger,
       .mobile-links {

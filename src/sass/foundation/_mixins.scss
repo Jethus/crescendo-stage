@@ -59,6 +59,7 @@
   &:hover {
     cursor: pointer;
     background-color: color.scale($brand-action, $lightness: -10%);
+    color: $light;
   }
 
   &:focus-visible {
@@ -68,6 +69,7 @@
 
 @mixin btn-primary {
   @include btn-base;
+  max-width: 280px;
 }
 
 @mixin btn-secondary {
@@ -76,8 +78,10 @@
   border: 2px solid $brand-text;
   color: $brand-primary;
   box-shadow: none;
+  max-width: 280px;
   &:hover {
     background-color: color.scale($off-white-bg, $lightness: -2%);
+    color: $brand-primary;
   }
 }
 

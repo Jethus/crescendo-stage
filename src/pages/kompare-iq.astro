@@ -13,13 +13,14 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
 >
   <TwoColumn title="Kompare IQ" heading="h1" id="kompare-iq" fullWidth={true}>
     <p slot="left">
-      Kompare IQ is an AI-based solution built to automate your invoice audits
+      Kompare IQ™ is an AI-based solution built to automate your invoice audits
       by directly comparing your contracts (such as service-level agreements)
       and pre-established pricing terms against each invoice received from your
       suppliers. It flags discrepancies, billing errors, and compliance
       issues—so you catch costly mistakes before they impact your bottom line.
-      Kompare IQ uses advanced natural language processing to interpret contract
-      terms and AI to compare them against incoming invoices.
+      Kompare IQ™ uses advanced natural language processing to interpret
+      contract terms and AI to compare them against incoming invoices. This AI
+      solution has multiple applications across various industries.
     </p>
     <a href="/contact" class="btn-primary" slot="left">Book a Demo</a>
     <ImageBlock
@@ -59,6 +60,12 @@ import ClosingCTA from "../components/sections/ClosingCTA.astro";
       .flex-group-col {
         flex: 0 0 50%;
         padding: 2rem;
+      }
+      .left-side {
+        justify-content: center;
+        .btn-primary {
+          width: 50%;
+        }
       }
     }
   }

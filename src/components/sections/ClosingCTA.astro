@@ -48,10 +48,6 @@ import closingCta from "../../assets/svgs/closing-cta.svg";
             p {
               color: rgba($light, 0.7);
             }
-            .btn-secondary {
-              max-width: 100%;
-              @include transition-fast(max-width);
-            }
           }
           .cta-image {
             display: none;
@@ -73,24 +69,12 @@ import closingCta from "../../assets/svgs/closing-cta.svg";
             .flex-group-col {
               flex: 0 0 50%;
               padding: 4rem 0 2rem 2rem;
-              .btn-secondary {
-                max-width: 70%;
-              }
             }
             .cta-image {
               display: block;
             }
             picture {
               display: flex;
-            }
-          }
-        }
-        @include container-query(large-laptop) {
-          .container {
-            .flex-group-col {
-              .btn-secondary {
-                max-width: 60%;
-              }
             }
           }
         }

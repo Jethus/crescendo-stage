@@ -4,7 +4,7 @@ order: 2
 ---
 
 <h2>Built for you</h2>
-<p>Tailored AI and automation workflows designed around your unique business processes. Our team of data scientists and engineers collaborates with you to define objectives, map data flows, and deliver a solution that scales with your growth.</p>
+<p>Tailored AI and automation workflows designed around your unique business processes. Our team of data scientists and engineers collaborate with you to define objectives, map data flows, and deliver a solution that scales with your growth.</p>
 <h3>Includes</h3>
 <ul>
 <li>Discovery & scoping</li>

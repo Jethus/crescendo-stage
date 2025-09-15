@@ -4,7 +4,7 @@ order: 1
 ---
 
 <h2>Jump-start your AI deployment</h2>
-<p>Whether you’re in manufacturing, professional services, or IT outsourcing, our pre-configured rule sets and data connectors get you up and running in weeks—not months—so you can capture value immediately.</p>
+<p>Whether you’re in professional services, IT outsourcing or manufacturing  our pre-configured rule sets and data connectors get you up and running in weeks—not months—so you can capture value immediately.</p>
 <h3>Includes</h3>
 <ul>
 <li>Pre-built functional modules</li>

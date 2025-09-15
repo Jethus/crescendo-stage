@@ -1,6 +1,6 @@
 ---
-import ImageBlock from "../primitives/ImageBlock.astro"
-import heroImage from "../../assets/svgs/hero.svg"
+import ImageBlock from "../primitives/ImageBlock.astro";
+import heroImage from "../../assets/svgs/hero.svg";
 ---
 
 <section id="hero">
@@ -12,8 +12,9 @@ import heroImage from "../../assets/svgs/hero.svg"
         >
       </h1>
       <p>
-        Streamline your operations by automating repetitive tasks such as data
-        entry, document review, exception handling and reporting.
+        Streamline your business and operations by automating repetitive tasks
+        such as data entry, document review, exception handling and backend
+        processing with just the right support for you.
       </p>
       <div class="flex-group-row">
         <a href="/contact " class="btn-primary">Book a Demo</a>
@@ -43,6 +44,7 @@ import heroImage from "../../assets/svgs/hero.svg"
     }
     .flex-group-col {
       justify-content: center;
+      align-items: flex-start;
       h1 {
         font-size: var(--font-size-xxxl);
         line-height: 1.4;
@@ -61,6 +63,7 @@ import heroImage from "../../assets/svgs/hero.svg"
         gap: 1.25rem;
         width: 100%;
         flex-direction: column;
+        width: 80%;
       }
     }
     .hero-image {
