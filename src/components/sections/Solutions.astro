@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import arrow from "../../assets/png/arrow.png";
+import book from "../../assets/png/book.png";
+import clock from "../../assets/png/clock.png";
+import invoice from "../../assets/png/invoice.png";
+---
+
+<section id="solutions" aria-labelledby="solutions-heading">
+  <div class="container">
+    <div class="flex-text">
+      <h2 id="solutions-heading">
+        Built for accuracy. Designed for efficiency.
+      </h2>
+      <p>
+        Our AI solutions integrate seamlessly with your existing systems and
+        processes, freeing your team to focus on exception resolution and
+        strategic priorities.
+      </p>
+    </div>
+    <ul class="service-cards">
+      <li class="card">
+        <h3>Proven Expertise</h3>
+        <p>
+          Deploy our cloud-based or on premise AI solutions in days, not months
+          by using our pre-configured solutions to deliver rapid wins at
+          competitive costs.
+        </p>
+        <Image src={invoice} alt="" width={450} height={250} />
+      </li>
+      <li class="card">
+        <h3>Scalable & Flexible</h3>
+        <p>
+          We deploy only what you need and when you need it, ensuring that you
+          get a return on your investment in each step of your automation
+          journey.
+        </p>
+        <Image src={arrow} alt="" width={450} height={250} />
+      </li>
+      <li class="card">
+        <h3>Domain Knowledge</h3>
+        <p>
+          We blend domain knowledge with cutting-edge AI-Solutions to solve
+          critical business challenges.
+        </p>
+        <Image src={book} alt="" width={450} height={300} />
+      </li>
+      <li class="card">
+        <h3>Collaborative Partnership</h3>
+        <p>
+          From discovery to rollout, we work with you side-by-side to ensure
+          sustainable impact and success.
+        </p>
+        <Image src={clock} alt="" width={450} height={250} />
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "@styles" as *;
+
+  #solutions {
+    background: $off-white-bg;
+    .container {
+      .service-cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        list-style-type: none;
+        padding: 0;
+        @include container-query(tablets) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include container-query(large-laptop) {
+          grid-template-columns: repeat(4, 1fr);
+          .card {
+            grid-template-rows: auto 1fr minmax(200px, 220px);
+          }
+        }
+
+        .card {
+          display: grid;
+          grid-template-rows: auto 1fr minmax(150px, 180px);
+          background-color: $light;
+          border-radius: 8px;
+          padding: 2rem 2rem 0;
+          gap: 1rem;
+          overflow: hidden;
+          // box-shadow: $drop-shadow;
+          // border-left: 4px solid $brand-primary;
+          h3 {
+            color: $brand-primary;
+            font-size: var(--font-size-md);
+          }
+          img {
+            width: calc(100% + 4rem);
+            object-fit: cover;
+            object-position: top center;
+            margin: 0 -2rem;
+          }
+        }
+      }
+    }
+  }
+</style>

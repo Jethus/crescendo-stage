@@ -12,7 +12,6 @@
 
 .flex-group-col {
   @include flex-group-col;
-  flex: 1;
 }
 
 .flex-group-row {
@@ -25,6 +24,7 @@
 
 .flex-text {
   @include flex-group-col;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 

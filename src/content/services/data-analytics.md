@@ -1,6 +1,6 @@
 ---
 heading: Data Analytics
-image: ../../assets/svgs/data-analytics.svg
+image: "../../assets/svgs/data-analytics.svg"
 order: 3
 ---
 

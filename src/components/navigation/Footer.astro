@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/svgs/CS-logo.svg";
+const today = new Date();
+---
+
+<footer>
+  <div class="flex-group-row">
+    <a href="/" class="logo" aria-label="Crescendo Stage">
+      <Image
+        loading="lazy"
+        src={logo}
+        alt="Crescendo Stage"
+        width={515}
+        height={100}
+      />
+    </a>
+    <ul class="footer-links">
+      <li><a href="/services">Products & Services</a></li>
+      <li><a href="/about-us">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+    </ul>
+  </div>
+  <p class="copyright">
+    &copy; {today.getFullYear()} Crescendo Stage. All rights reserved.
+  </p>
+  <p class="credit">
+    Designed & Coded by <a href="https://pixelboost.ca">Pixelboost</a>.
+  </p>
+</footer>
+
+<style lang="scss">
+  @use "@styles" as *;
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    background-color: $light;
+    color: $dark;
+    text-align: center;
+    padding-inline: $gutter;
+    .flex-group-row {
+      gap: 1rem;
+      width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      .logo {
+        height: 100px;
+        img {
+          width: 100%;
+          height: 100px;
+        }
+      }
+    }
+    .footer-links {
+      font-size: var(--font-size-md);
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-bottom: 1rem;
+
+      li {
+        margin-bottom: 0.25rem;
+      }
+    }
+    .copyright {
+      margin-bottom: 1rem;
+    }
+    .credit {
+      width: 100%;
+      text-align: right;
+    }
+    @include container-query(large-mobile) {
+      .flex-group-row {
+        .logo {
+          height: 80px;
+          img {
+            height: 80px;
+          }
+        }
+      }
+    }
+    @include container-query(tablets) {
+      .flex-group-row {
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        .logo {
+          height: 80px;
+          img {
+            height: 80px;
+          }
+        }
+        .footer-links {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          gap: 2rem;
+          li {
+            margin-bottom: 0;
+          }
+        }
+        .credit {
+          text-align: right;
+        }
+      }
+    }
+  }
+</style>

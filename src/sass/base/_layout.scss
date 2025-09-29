@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  container-type: inline-size;
+}
+
 body,
 html {
   @include body-style;
@@ -14,13 +18,6 @@ html {
   padding: 0;
   color: $brand-text;
   overflow-x: clip;
-}
-
-body:has(#menu-toggle:checked) {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  position: fixed;
 }
 
 /* Remove tap highlight color on mobile */
@@ -32,16 +29,38 @@ textarea {
 }
 
 .container {
-  max-width: $content-width;
+  display: flex;
+  flex-direction: column;
+  grid-column: 2/4;
+  gap: 2rem;
   position: relative;
   z-index: 1;
   width: 100%;
   margin: auto;
+  padding-inline: $gutter;
+  @include container-query(desktop) {
+    padding-inline: 0;
+  }
+  &.full-width {
+    grid-column: 2/-1;
+    padding-inline: 0;
+  }
+}
+
+main > section:first-child {
+  padding-block-start: 0;
 }
 
 section {
-  padding: 1.5rem 0.75rem;
-  @include container-query(medium) {
-    padding: 2rem 1rem;
+  padding-block: $section-space;
+  display: grid;
+  grid-template-columns:
+    1fr minmax(0, calc($content-width / 2)) minmax(0, calc($content-width / 2))
+    1fr;
+  @include container-query(small-laptop) {
+    padding: 4rem 2rem;
+  }
+  @include container-query(desktop) {
+    padding: 4rem 0;
   }
 }

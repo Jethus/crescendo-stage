@@ -1,10 +1,10 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
+import { glob, file } from "astro/loaders";
 
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
   // Type-check frontmatter using a schema
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/data/blog" }),
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -18,13 +18,38 @@ const blog = defineCollection({
 
 const services = defineCollection({
   // Load Markdown files in the `src/content/services/` directory.
-
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/services",
+  }),
   schema: ({ image }) =>
     z.object({
       heading: z.string(),
       image: image(),
+      order: z.number(),
+    }),
+});
+
+const tabs = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/tabs" }),
+  schema: ({}) =>
+    z.object({
+      heading: z.string(),
+      order: z.number(),
+    }),
+});
+
+const lists = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/lists",
+  }),
+  schema: ({}) =>
+    z.object({
+      heading: z.string(),
+      group: z.string(),
       order: z.number().optional(),
     }),
 });
 
-export const collections = { blog, services };
+export const collections = { blog, services, tabs, lists };

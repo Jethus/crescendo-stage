@@ -44,42 +44,47 @@
 }
 
 @mixin btn-base {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base-md);
   @include transition-fast(transform, background-color);
-  padding: 0.75rem 2rem;
-  border-radius: 0.25rem;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
   color: $light;
   background-color: $brand-action;
-  box-shadow: 0 4px 16px $brand-action;
   text-align: center;
   z-index: 1;
+  text-decoration: none;
+  border: none;
 
   &:hover {
     cursor: pointer;
     background-color: color.scale($brand-action, $lightness: -10%);
+    color: $light;
   }
 
   &:focus-visible {
-    @include focus-style($dark);
+    @include focus-style($brand-action);
   }
 }
 
 @mixin btn-primary {
   @include btn-base;
-  width: 100%;
+  max-width: 280px;
 }
 
 @mixin btn-secondary {
   @include btn-base;
-  width: 100%;
   background-color: $light;
   border: 2px solid $brand-text;
   color: $brand-primary;
   box-shadow: none;
+  max-width: 280px;
   &:hover {
-    background-color: color.scale($off-white-bg, $lightness: -10%);
+    background-color: color.scale($off-white-bg, $lightness: -2%);
+    color: $brand-primary;
   }
 }
+
 // Fluid font variable calculations
 @mixin fluid-font-sizes {
   @for $i from 1 through list.length($type-steps) {
@@ -146,23 +151,13 @@
 // Font styles
 @mixin header-style {
   font-family: $header-font;
-  line-height: $line-height-small;
-  font-weight: $black;
+  color: $brand-primary;
 }
 
 @mixin body-style {
   font-family: $body-font;
   font-size: 1rem;
   line-height: $line-height-normal;
-}
-
-// Links
-@mixin link-style($colour) {
-  color: $colour;
-
-  &:hover {
-    color: $brand-action;
-  }
 }
 
 @mixin focus-style($colour) {

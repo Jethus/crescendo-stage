@@ -1,6 +1,6 @@
 ---
 heading: Consulting
-image: ../../assets/svgs/consulting.svg
+image: "../../assets/svgs/consulting.svg"
 order: 4
 ---
 
