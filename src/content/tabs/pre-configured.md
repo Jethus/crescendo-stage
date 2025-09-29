@@ -12,4 +12,4 @@ order: 1
 <li>Standardized contract term libraries</li>
 <li>Training & ongoing support</li>
 </ul>
-<a href="/contact " class="btn-primary">Learn more</a>
+<a href="/contact " class="btn-primary">Contact Us</a>

@@ -12,4 +12,4 @@ order: 2
 <li>Testing & validation</li>
 <li>Deployment & ongoing support</li>
 </ul>
-<a href="/contact " class="btn-primary">Learn more</a>
+<a href="/contact " class="btn-primary">Contact Us</a>

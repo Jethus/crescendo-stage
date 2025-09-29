@@ -57,32 +57,30 @@ import logo from "../../assets/svgs/CS-logo.svg";
   }
   // mobile header, with shrink effect
   nav {
+    --nav-padding: 0.75rem 1.25rem;
+    --nav-border-radius: 0;
+    --nav-offset: 0;
+    --nav-scale: 1;
+    --nav-width: 100%;
     display: grid;
     grid-template-columns:
-      1fr minmax(0, calc($content-width / 2)) minmax(
-        0,
-        calc($content-width / 2)
-      )
+      1fr
+      minmax(0, 750px)
+      minmax(0, 750px)
       1fr;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 0.75rem 1.25rem;
+    width: (var(--nav-width));
+    padding: var(--nav-padding);
+    border-radius: var(--nav-border-radius);
+    transform: translateY(var(--nav-offset)) scale(var(--nav-scale));
     background: $light;
     box-shadow: 0 2px 4px rgba($dark, 0.12);
-    transform: scaleX(1) translateY(0);
     transform-origin: top center;
     margin-inline: auto;
-    border-radius: 0;
     will-change: transform;
     overflow-anchor: none;
-    @include transition-slow(
-      transform,
-      width,
-      padding,
-      box-shadow,
-      border-radius
-    );
+    @include transition-slow(transform, box-shadow, border-radius, width);
     .container {
       flex-direction: row;
       justify-content: space-between;
@@ -103,17 +101,18 @@ import logo from "../../assets/svgs/CS-logo.svg";
       transform-origin: center right;
     }
     &.is-shrunk {
-      transform: translateY(2rem);
-      width: calc(100% - 2rem);
-      border-radius: 1rem;
-      padding: 0.5rem 1rem;
+      --nav-padding: 0.5rem 1rem;
+      --nav-border-radius: 2rem;
+      --nav-offset: 2rem;
+      --nav-scale: 0.95;
+      --nav-width: calc(100% - 4rem);
       box-shadow: 0 4px 8px rgba($dark, 0.12);
 
       .logo,
       .desktop-links,
       .hamburger,
       #contact {
-        transform: scale(0.9);
+        transform: scale(var(--nav-scale));
       }
       .hamburger {
         &:hover,
@@ -130,7 +129,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
     .desktop-links,
     .hamburger,
     #contact {
-      transform: scale(1);
+      transform: scale(var(--nav-scale));
       transition: transform 0.35s ease;
     }
   }
@@ -245,7 +244,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
 
   // Undo the shrink effects when mobile menu is open
   nav:has([data-visible="true"]) {
-    transform: scale(1) translateY(0);
+    transform: translateY(var(--nav-offset)) scale(var(--nav-scale));
     width: 100%;
     border-radius: 0;
     padding: 0.75rem 1.25rem;
@@ -253,7 +252,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
     .desktop-links,
     .hamburger,
     #contact {
-      transform: scale(1);
+      transform: scale(var(--nav-scale));
     }
     .hamburger {
       &:hover,
@@ -274,11 +273,8 @@ import logo from "../../assets/svgs/CS-logo.svg";
         }
       }
       &.is-shrunk {
-        transform: translateY(2rem);
-        width: calc(100% - 4rem);
-        border-radius: 2rem;
+        --nav-padding: 1rem 1.5rem;
         box-shadow: 0 4px 8px rgba($dark, 0.12);
-        padding: 1rem 1.5rem;
       }
       .desktop-links {
         display: flex;
