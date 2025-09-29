@@ -65,15 +65,15 @@ import logo from "../../assets/svgs/CS-logo.svg";
     display: grid;
     grid-template-columns:
       1fr
-      minmax(0, 750px)
-      minmax(0, 750px)
+      minmax(0, calc($content-width / 2))
+      minmax(0, calc($content-width / 2))
       1fr;
     align-items: center;
     justify-content: space-between;
     width: (var(--nav-width));
     padding: var(--nav-padding);
     border-radius: var(--nav-border-radius);
-    transform: translateY(var(--nav-offset)) scale(var(--nav-scale));
+    transform: translateY(var(--nav-offset));
     background: $light;
     box-shadow: 0 2px 4px rgba($dark, 0.12);
     transform-origin: top center;
