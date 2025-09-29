@@ -61,16 +61,15 @@ import logo from "../../assets/svgs/CS-logo.svg";
     --nav-border-radius: 0;
     --nav-offset: 0;
     --nav-scale: 1;
+    --nav-width: 100%;
     display: grid;
+    // 760px is so that when shrunk the logo lines up with the content below
     grid-template-columns:
-      1fr minmax(0, calc($content-width / 2)) minmax(
-        0,
-        calc($content-width / 2)
-      )
+      1fr minmax(0, 760px) minmax(0, 760px)
       1fr;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: (var(--nav-width));
     padding: var(--nav-padding);
     border-radius: var(--nav-border-radius);
     transform: translateY(var(--nav-offset)) scale(var(--nav-scale));
@@ -80,7 +79,7 @@ import logo from "../../assets/svgs/CS-logo.svg";
     margin-inline: auto;
     will-change: transform;
     overflow-anchor: none;
-    @include transition-slow(transform, box-shadow, border-radius);
+    @include transition-slow(transform, box-shadow, border-radius, width);
     .container {
       flex-direction: row;
       justify-content: space-between;
@@ -102,13 +101,11 @@ import logo from "../../assets/svgs/CS-logo.svg";
     }
     &.is-shrunk {
       --nav-padding: 0.5rem 1rem;
-      --nav-border-radius: 1rem;
+      --nav-border-radius: 2rem;
       --nav-offset: 2rem;
       --nav-scale: 0.95;
-      box-shadow:
-        0 4px 8px rgba($dark, 0.12),
-        inset 1rem 0 0 var(--background-color),
-        inset -1rem 0 0 var(--background-color);
+      --nav-width: 1650px;
+      box-shadow: 0 4px 8px rgba($dark, 0.12);
 
       .logo,
       .desktop-links,
@@ -275,11 +272,8 @@ import logo from "../../assets/svgs/CS-logo.svg";
         }
       }
       &.is-shrunk {
-        transform: translateY(2rem);
-        width: calc(100% - 4rem);
-        border-radius: 2rem;
+        --nav-padding: 1rem 1.5rem;
         box-shadow: 0 4px 8px rgba($dark, 0.12);
-        padding: 1rem 1.5rem;
       }
       .desktop-links {
         display: flex;
