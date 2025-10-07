@@ -1,68 +1,89 @@
-# Astro Starter Kit: Blog
+# Pixelboost Client Repo: Crescendo Stage
 
-```sh
-npm create astro@latest -- --template blog
-```
+This repository contains the source code for the Crescendo Stage website, a high-performance project built by Pixelboost. It is developed using the Astro framework to ensure exceptional speed, excellent Core Web Vitals, and strong technical SEO out of the box.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 🚀 Project Overview
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+*   **Client:** Crescendo Stage
+*   **Project Type:** SaaS
+*   **Live URL:** [Crescendo Stage](https://crescendostage.com/)
+*   **Staging URL:** N/A (Not using Netlify nameservers)
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+This project is built according to Pixelboost's high standards for quality, focusing on delivering measurable business outcomes for small businesses in Ontario through superior web performance and a custom-tailored user experience.
 
-Features:
+## ✨ Tech Stack
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+*   **Framework:** [Astro](https://astro.build/)
+*   **Styling:** [SCSS](https://sass-lang.com/)
+*   **Deployment:** [Netlify](https://www.netlify.com/)
+*   **Analytics:** [Plausible](https://plausible.io/)
+*   **Additional Packages:**
+    *   `astro-seo`: For managing SEO metadata.
+    *   `@astrojs/sitemap`: For automatic sitemap generation.
 
-## 🚀 Project Structure
+## 🛠️ Getting Started
 
-Inside of your Astro project, you'll see the following folders and files:
+### Prerequisites
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+*   Node.js (Version specified in `.nvmrc` file, e.g., v20.x.x)
+*   npm (or pnpm/yarn)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Setup
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1.  **Clone the repository:**
+    ```
+    git clone https://github.com/Jethus/crescendo-stage.git
+    cd /crescendo-stage
+    ```
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+2.  **Install dependencies:**
+    ```
+    npm i
+    ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+3.  **Run the development server:**
+    ```
+    npm run dev
+    ```
+    The site will be available at `http://localhost:4321`.
 
-## 🧞 Commands
+## 📦 Available Scripts
 
-All commands are run from the root of the project, from a terminal:
+*   `npm run dev`: Starts the local development server with Hot Module Replacement (HMR).
+*   `npm run build`: Creates a production-ready build in the `/dist` directory.
+*   `npm run preview`: Starts a local server to preview the production build.
+*   `npm run lint`: Lints the codebase for errors and formatting issues.
+*   `npm run format`: Formats all code using Prettier.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📁 Project Structure
 
-## 👀 Want to learn more?
+This project follows the standard Astro directory structure:
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+*   `/src/pages/`: Contains all pages and API endpoints. Each `.astro` file becomes a page route.
+*   `/src/layouts/`: Contains master layout components for pages.
+*   `/src/components/`: Contains reusable UI components (e.g., Header, Footer, Cards).
+*   `/src/styles/`: Contains global styles.
+*   `/src/content/`: For content collections (e.g., blog posts, case studies) if using Astro Content.
+*   `/public/`: For static assets that do not need processing (e.g., `favicon.ico`, `robots.txt`).
 
-## Credit
+## ☁️ Deployment
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This project and repo is configured for continuous deployment on Netlify.
+
+*   **Production Branch:** `main`
+*   **Build Command:** `npm run build`
+*   **Output Directory:** `dist`
+
+Any push or merge to the `main` branch will automatically trigger a new production deployment.
+
+## ✅ Pixelboost Quality Standards
+
+This project must adhere to the following baseline metrics to ensure a high-quality deliverable:
+
+*   **Performance:** Achieve a Google PageSpeed Insights score of **95+ on mobile** for key pages.
+*   **Core Web Vitals:** The site is architected to pass all three Core Web Vitals (LCP, INP, CLS) at the 75th percentile for real users, per Google's official benchmark.
+*   **Accessibility:** Comply with WCAG 2.1 Level AA guidelines.
+*   **Best Practices & SEO:** Score 100 in the Best Practices, Accessibility and SEO categories in Lighthouse audits.
+
+---
+*This README was last updated on October 07, 2025.*
